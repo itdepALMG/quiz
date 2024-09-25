@@ -109,27 +109,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-    if ($des == 'a') {
-        $pdfContent = file_get_contents('Vata_Prakriti.pdf');
-    } elseif ($des == 'b') {
-        $pdfContent = file_get_contents('pitta_Prakriti.pdf');
-    } elseif ($des == 'c') {
-        $pdfContent = file_get_contents('kapha_Prakriti.pdf');
-    } elseif ($des == 'ab') {
-        $pdfContent = file_get_contents('Vata_pitta_Prakriti.pdf');
-    } elseif ($des == 'ba') {
-        $pdfContent = file_get_contents('Vata_pitta_Prakriti.pdf');
-    } elseif ($des == 'bc') {
-        $pdfContent = file_get_contents('kapha_pitta_Prakriti.pdf');
-    } elseif ($des == 'cb') {
-        $pdfContent = file_get_contents('kapha_pitta_Prakriti.pdf');
-    } elseif ($des == 'ca') {
-        $pdfContent = file_get_contents('kapha_vata_Prakriti.pdf');
-    } elseif ($des == 'ac') {
-        $pdfContent = file_get_contents('kapha_vata_Prakriti.pdf');
-    } else {
-        $pdfContent = file_get_contents('tri_Prakriti.pdf');
-    }
+    // if ($des == 'a') {
+    //     $pdfContent = file_get_contents('Vata_Prakriti.pdf');
+    // } elseif ($des == 'b') {
+    //     $pdfContent = file_get_contents('pitta_Prakriti.pdf');
+    // } elseif ($des == 'c') {
+    //     $pdfContent = file_get_contents('kapha_Prakriti.pdf');
+    // } elseif ($des == 'ab') {
+    //     $pdfContent = file_get_contents('Vata_pitta_Prakriti.pdf');
+    // } elseif ($des == 'ba') {
+    //     $pdfContent = file_get_contents('Vata_pitta_Prakriti.pdf');
+    // } elseif ($des == 'bc') {
+    //     $pdfContent = file_get_contents('kapha_pitta_Prakriti.pdf');
+    // } elseif ($des == 'cb') {
+    //     $pdfContent = file_get_contents('kapha_pitta_Prakriti.pdf');
+    // } elseif ($des == 'ca') {
+    //     $pdfContent = file_get_contents('kapha_vata_Prakriti.pdf');
+    // } elseif ($des == 'ac') {
+    //     $pdfContent = file_get_contents('kapha_vata_Prakriti.pdf');
+    // } else {
+    //     $pdfContent = file_get_contents('tri_Prakriti.pdf');
+    // }
 
 
   
@@ -171,9 +171,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Set headers to return a PDF file
-    header('Content-Type: application/pdf');
-    header('Content-Disposition: inline; filename="downloaded.pdf"');
-    echo $pdfContent;
+    // header('Content-Type: application/pdf');
+    // header('Content-Disposition: inline; filename="downloaded.pdf"');
+    // echo $des;
+    ob_clean();
+   
+    echo $des;
     exit;
 } else {
     echo 'Invalid request method.';

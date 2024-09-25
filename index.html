@@ -30,7 +30,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <style>
       body {
         background-color: #3e8944c3;
@@ -586,28 +586,41 @@
             type: "POST",
             url: "submit_quiz.php",
             data: formData,
-            xhrFields: {
-              responseType: "blob", // Expecting a Blob response
-            },
-            success: function (blob) {
-              if (blob && blob.size > 0) {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.style.display = "none";
-                a.href = url;
-                a.target = "_blank"; // To open in a new tab
-                // a.download = 'downloaded.pdf'; // Uncomment to download
-
-                document.body.appendChild(a);
-                a.click();
-
-                // Cleanup
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-              } else {
-                console.error("Received empty Blob or Blob is invalid.");
+            success: function (response) {
+              console.log(response);
+              if (response == "a") {
+                const url = "Vata_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "b") {
+                const url = "pitta_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "c") {
+                const url = "kapha_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "ab") {
+                const url = "Vata_pitta_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "ba") {
+                const url = "Vata_pitta_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "bc") {
+                const url = "kapha_pitta_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "cb") {
+                const url = "kapha_pitta_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "ac") {
+                const url = "kapha_vata_Prakriti.html"; 
+                window.open(url, "_blank");
+              } else if (response == "ca"){
+                const url = "kapha_vata_Prakriti.html"; 
+                window.open(url, "_blank");
+              }else{
+                const url = "tri_Prakriti.html"; 
+                window.open(url, "_blank");
+                
               }
-              location.reload();
+              location.reload(); 
             },
             error: function () {
               alert("Error in form submission");
