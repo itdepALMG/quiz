@@ -26,6 +26,10 @@
       href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Playwrite+DE+Grund:wght@100..400&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <style>
       body {
         background-color: #3e8944c3;
@@ -68,6 +72,7 @@
 
       .question {
         margin-bottom: 20px;
+        
       }
 
       .answer {
@@ -435,6 +440,7 @@
             type="button"
             class="btn btn-lg btn-success fs-3"
             onclick="previousQuestion()"
+            id="previousBtn"
           >
             Previous
           </button>
@@ -463,12 +469,17 @@
     <script>
       let currentQuestion = 1;
       const totalQuestions = 16; // Update this to the total number of questions
-
-      function showQuestion(index) {
-        $(".question").hide();
-        $(`.question[data-question="${index}"]`).show();
+      $("#previousBtn").hide();
+      function showQuestion(questionNumber) {
+        $(".question")
+      .filter(":visible") // Only select currently visible question
+      .removeClass("animate__backInLeft") // Remove the animation class
+      .hide(300, function () {
+        $(".question[data-question='" + questionNumber + "']")
+          .addClass("animate__animated animate__backInLeft") // Add animation class
+          .show(300); // Show with animation
+      });
       }
-
       function nextQuestion() {
         if (currentQuestion == 1) {
           // Clear previous error messages
@@ -501,6 +512,7 @@
           if (isValid) {
             currentQuestion++;
             showQuestion(currentQuestion);
+             $("#previousBtn").show();
           }
         } else if (validateCurrentQuestion()) {
           if (currentQuestion < totalQuestions) {
@@ -586,7 +598,6 @@
                 // Cleanup
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
-                
               } else {
                 console.error("Received empty Blob or Blob is invalid.");
               }
