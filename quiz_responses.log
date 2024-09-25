@@ -1,0 +1,265 @@
+
+
+a: 59.4
+b: 39.6
+c: 0
+max: 59.4
+middle: 39.6
+min: 0
+des: a
+
+
+
+
+a: 0
+b: 0
+c: 99
+max: 99
+middle: 0
+min: 0
+des: c
+
+
+
+
+a: 19.8
+b: 26.4
+c: 52.8
+max: 52.8
+middle: 26.4
+min: 19.8
+des: c
+
+
+
+
+a: 19.8
+b: 46.2
+c: 33
+max: 46.2
+middle: 33
+min: 19.8
+des: bc
+
+
+
+
+a: 6.6
+b: 59.4
+c: 33
+max: 59.4
+middle: 33
+min: 6.6
+des: b
+
+
+
+
+a: 6.6
+b: 39.6
+c: 52.8
+max: 52.8
+middle: 39.6
+min: 6.6
+des: cb
+
+
+
+
+a: 6.6
+b: 66
+c: 19.8
+max: 66
+middle: 19.8
+min: 6.6
+des: b
+
+
+name: 
+mobile: 
+
+
+answers: b , c , b , c , b , c , a , b , a , b , b , c , c , b , b
+a: 13.2
+b: 52.8
+c: 33
+max: 52.8
+middle: 33
+min: 13.2
+des: b
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: b , c , c , b , a , b , a , b , b , c , a , a , a , b , a
+a: 39.6
+b: 39.6
+c: 19.8
+max: 39.6
+middle: 39.6
+min: 19.8
+des: ab
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 39.6
+b: 39.6
+c: 19.8
+max: 39.6
+middle: 39.6
+min: 19.8
+des: ab
+
+
+Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ch.your_table_name' doesn't exist
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 39.6
+b: 39.6
+c: 19.8
+max: 39.6
+middle: 39.6
+min: 19.8
+des: ab
+
+
+Error: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'answers' at row 1
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 39.6
+b: 39.6
+c: 19.8
+max: 39.6
+middle: 39.6
+min: 19.8
+des: ab
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 99
+b: 0
+c: 0
+max: 99
+middle: 0
+min: 0
+des: a
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 99
+b: 0
+c: 0
+max: 99
+middle: 0
+min: 0
+des: a
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 72.6
+b: 26.4
+c: 0
+max: 72.6
+middle: 26.4
+min: 0
+des: a
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 99
+b: 0
+c: 0
+max: 99
+middle: 0
+min: 0
+des: a
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 79.2
+b: 6.6
+c: 13.2
+max: 79.2
+middle: 13.2
+min: 6.6
+des: a
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 79.2
+b: 6.6
+c: 13.2
+max: 79.2
+middle: 13.2
+min: 6.6
+des: a
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 46.2
+b: 0
+c: 52.8
+max: 52.8
+middle: 46.2
+min: 0
+des: ca
+
+
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 26.4
+b: 0
+c: 72.6
+max: 72.6
+middle: 26.4
+min: 0
+des: c
+
+
