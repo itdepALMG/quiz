@@ -586,9 +586,11 @@
                 // Cleanup
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
+                
               } else {
                 console.error("Received empty Blob or Blob is invalid.");
               }
+              location.reload();
             },
             error: function () {
               alert("Error in form submission");
