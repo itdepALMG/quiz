@@ -27,9 +27,9 @@
       rel="stylesheet"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <style>
       body {
         background-color: #3e8944c3;
@@ -72,7 +72,6 @@
 
       .question {
         margin-bottom: 20px;
-        
       }
 
       .answer {
@@ -472,13 +471,13 @@
       $("#previousBtn").hide();
       function showQuestion(questionNumber) {
         $(".question")
-      .filter(":visible") // Only select currently visible question
-      .removeClass("animate__backInLeft") // Remove the animation class
-      .hide(300, function () {
-        $(".question[data-question='" + questionNumber + "']")
-          .addClass("animate__animated animate__backInLeft") // Add animation class
-          .show(300); // Show with animation
-      });
+          .filter(":visible") // Only select currently visible question
+          .removeClass("animate__backInLeft") // Remove the animation class
+          .hide(300, function () {
+            $(".question[data-question='" + questionNumber + "']")
+              .addClass("animate__animated animate__backInLeft") // Add animation class
+              .show(300); // Show with animation
+          });
       }
       function nextQuestion() {
         if (currentQuestion == 1) {
@@ -512,7 +511,7 @@
           if (isValid) {
             currentQuestion++;
             showQuestion(currentQuestion);
-             $("#previousBtn").show();
+            $("#previousBtn").show();
           }
         } else if (validateCurrentQuestion()) {
           if (currentQuestion < totalQuestions) {
@@ -570,7 +569,13 @@
         element.classList.add("selected");
         element.querySelector('input[type="radio"]').checked = true;
       }
-
+      document
+        .getElementById("quizForm")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault(); // Prevent form submission
+          }
+        });
       $(document).ready(function () {
         $("#quizForm").on("submit", function (e) {
           e.preventDefault();
