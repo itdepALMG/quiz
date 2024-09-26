@@ -391,7 +391,7 @@ body {
   opacity: 0;
 }
 .ui-spinner {
-  background-image: url(../../../catalog/assets/img/loader@2x.gif);
+  background-image: url(../loading@2x.gif);
   width: 24px;
   height: 24px;
   position: absolute;
