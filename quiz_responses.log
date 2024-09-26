@@ -703,3 +703,20 @@ des: a
 Error: SQLSTATE[HY000] [1045] Access denied for user 'u674432606_quiz_db'@'localhost' (using password: YES)
 
 
+name: Pasindu Pramodh
+mobile: 0772618203
+
+
+answers: 
+a: 85.8
+b: 6.6
+c: 6.6
+max: 85.8
+middle: 6.6
+min: 6.6
+des: a
+
+
+Error: SQLSTATE[HY000] [1045] Access denied for user 'u674432606_quiz_db'@'localhost' (using password: YES)
+
+

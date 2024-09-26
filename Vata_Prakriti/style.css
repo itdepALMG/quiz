@@ -350,14 +350,15 @@ body {
 .ui-arrow-next-page,
 .ui-arrow-previous-page {
   width: 30px;
-  height: 60px;
+  height: 30px;
   position: absolute;
   top: 50%;
   top: calc(50% - 30px);
   right: -40px;
   z-index: 10;
-  background-image: url(../../../catalog/assets/img/arrows@2x.png);
-  background-size: 60px 120px;
+  background-image: url(../arrow-left-2x.png);
+  background-size: 170px 170px;
+  background-size: contain;
   background-position: 0 0;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s;
@@ -792,8 +793,9 @@ html:full-screen #controls #ui-icon-full-screen .fa:before {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-image: url(../../../catalog/assets/img/arrows@2x.png);
-  background-size: 60px 120px;
+  background-image: url(../arrow-left-2x.png);
+  background-size: 50px 60px;
+  background-size: cover;
   background-position: 0 60px;
   cursor: pointer;
   opacity: 0.8;
@@ -816,4 +818,12 @@ html:full-screen #controls #ui-icon-full-screen .fa:before {
   .ui-share-box .ui-share-options {
     height: 50px !important;
   }
+}
+html {
+  touch-action: manipulation; /* Disable double-tap zoom */
+  -ms-touch-action: manipulation; /* Disable double-tap zoom for older versions of IE */
+}
+
+body {
+  overflow: hidden; /* Prevent zooming with scroll bars */
 }

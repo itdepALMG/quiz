@@ -581,51 +581,64 @@
         $("#quizForm").on("submit", function (e) {
           e.preventDefault();
           var formData = $(this).serialize();
-
-          $.ajax({
-            type: "POST",
-            url: "submit_quiz.php",
-            data: formData,
-            success: function (response) {
-              console.log(response);
-              if (response == "a") {
-                const url = "Vata_Prakriti"; 
-                window.open(url, "_blank");
-              } else if (response == "b") {
-                const url = "pitta_Prakriti.html"; 
-                window.open(url, "_blank");
-              } else if (response == "c") {
-                const url = "kapha_Prakriti.html"; 
-                window.open(url, "_blank");
-              } else if (response == "ab") {
-                const url = "Vata_pitta_Prakriti.html"; 
-                window.open(url, "_blank");
-              } else if (response == "ba") {
-                const url = "Vata_pitta_Prakriti.html"; 
-                window.open(url, "_blank");
-              } else if (response == "bc") {
-                const url = "kapha_pitta_Prakriti.html"; 
-                window.open(url, "_blank");
-              } else if (response == "cb") {
-                const url = "kapha_pitta_Prakriti.html"; 
-                window.open(url, "_blank");
-              } else if (response == "ac") {
-                const url = "kapha_vata_Prakriti.html"; 
-                window.open(url, "_blank");
-              } else if (response == "ca"){
-                const url = "kapha_vata_Prakriti.html"; 
-                window.open(url, "_blank");
-              }else{
-                const url = "tri_Prakriti.html"; 
-                window.open(url, "_blank");
-                
-              }
-              location.reload(); 
-            },
-            error: function () {
-              alert("Error in form submission");
-            },
-          });
+          if (validateCurrentQuestion()) {
+            $.ajax({
+              type: "POST",
+              url: "submit_quiz.php",
+              data: formData,
+              success: function (response) {
+                console.log(response);
+                if (response == "a") {
+                  const url = "Vata_Prakriti";
+                  window.open(url, "_blank");
+                } else if (response == "b") {
+                  const url = "pitta_Prakriti.html";
+                  window.open(url, "_blank");
+                } else if (response == "c") {
+                  const url = "kapha_Prakriti.html";
+                  window.open(url, "_blank");
+                } else if (response == "ab") {
+                  const url = "Vata_pitta_Prakriti.html";
+                  window.open(url, "_blank");
+                } else if (response == "ba") {
+                  const url = "Vata_pitta_Prakriti.html";
+                  window.open(url, "_blank");
+                } else if (response == "bc") {
+                  const url = "kapha_pitta_Prakriti.html";
+                  window.open(url, "_blank");
+                } else if (response == "cb") {
+                  const url = "kapha_pitta_Prakriti.html";
+                  window.open(url, "_blank");
+                } else if (response == "ac") {
+                  const url = "kapha_vata_Prakriti.html";
+                  window.open(url, "_blank");
+                } else if (response == "ca") {
+                  const url = "kapha_vata_Prakriti.html";
+                  window.open(url, "_blank");
+                } else {
+                  const url = "tri_Prakriti.html";
+                  window.open(url, "_blank");
+                }
+                location.reload();
+              },
+              error: function () {
+                alert("Error in form submission");
+              },
+            });
+          } else {
+            Swal.fire({
+              title: "Pleas select an answer...!",
+              text: "",
+              icon: "error",
+              confirmButtonText: "OK",
+              background: "#f8d7da",
+              confirmButtonColor: "#d33",
+              customClass: {
+                popup: "custom-popup",
+                confirmButton: "custom-confirm-button",
+              },
+            });
+          }
         });
 
         showQuestion(currentQuestion);
