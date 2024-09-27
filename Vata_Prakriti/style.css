@@ -351,7 +351,7 @@ body {
 .ui-arrow-previous-page {
   width: 30px;
   height: 30px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   top: calc(50% - 30px);
   right: 0px;
@@ -367,6 +367,7 @@ body {
   -ms-transition: opacity 0.2s;
   transition: opacity 0.2s;
   cursor: pointer;
+  z-index: 199999999;
 }
 .ui-arrow-previous-page {
   background-position: 30px 0;
@@ -790,7 +791,7 @@ html:full-screen #controls #ui-icon-full-screen .fa:before {
   width: 25px;
   height: 25px;
   display: block;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 0px;
   background-image: url(../arrow-left-2x.png);
@@ -799,6 +800,7 @@ html:full-screen #controls #ui-icon-full-screen .fa:before {
   background-position: 0 60px;
   cursor: pointer;
   opacity: 0.8;
+  z-index: 199999999;
 }
 .ui-share-box .close-mark:hover {
   opacity: 1;
