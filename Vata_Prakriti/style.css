@@ -354,7 +354,7 @@ body {
   position: absolute;
   top: 50%;
   top: calc(50% - 30px);
-  right: -40px;
+  right: 0px;
   z-index: 10;
   background-image: url(../arrow-left-2x.png);
   background-size: 170px 170px;
@@ -371,7 +371,7 @@ body {
 .ui-arrow-previous-page {
   background-position: 30px 0;
   right: auto;
-  left: -40px;
+  left: 0px;
 }
 .ui-arrow-control-hover {
   -webkit-transition: none;
@@ -792,7 +792,7 @@ html:full-screen #controls #ui-icon-full-screen .fa:before {
   display: block;
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 0px;
   background-image: url(../arrow-left-2x.png);
   background-size: 50px 60px;
   background-size: cover;

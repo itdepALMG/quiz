@@ -145,7 +145,7 @@ var FlipbookView = SingleView.extend({
     var $el = $('<div />'),
       settings = window.FlipbookSettings,
       imgSrc = settings.pageFolder+''+pageNumber+'.jpeg',
-      $img = $('<img />', {width: '90%', height: '100%', css: {display: 'none'}});
+      $img = $('<img />', {width: '100%', height: '100%', css: {display: 'none'}});
 
     // Do we need a spinner?
     var timerAddLoader = setTimeout(function() {
@@ -492,7 +492,7 @@ var MiniaturesView = SingleView.extend({
       $img = $pageElement.find('img');
 
     if (!$img[0]) {
-      $pageElement.html('<img width="90%" height="100%" src="'+imgSrc+'"/>');
+      $pageElement.html('<img width="100%" height="100%" src="'+imgSrc+'"/>');
     } else {
      $img.attr('src', imgSrc);
     }
