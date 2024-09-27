@@ -488,7 +488,7 @@ var MiniaturesView = SingleView.extend({
 
   _refreshPictureEvent: function(event, pageNumber, $pageElement) {
     var settings = window.FlipbookSettings,
-      imgSrc = settings.pageFolder+'/'+pageNumber+'/thumb.jpg',
+    imgSrc = settings.pageFolder+''+pageNumber+'.jpeg',
       $img = $pageElement.find('img');
 
     if (!$img[0]) {
@@ -625,7 +625,7 @@ var ControlsView = SingleView.extend({
         this._hideOptionTimer = setTimeout(function() {
           that._hideOptionTimer = null;
           that.$el.removeClass('extend-ui-options');
-        }, 100);
+        }, 1000);
       }
     } else {
       if (this._hideOptionTimer) {

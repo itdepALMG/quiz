@@ -622,7 +622,7 @@ body {
   }
 }
 #controls.hidden-controls .all {
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
 }
 #controls.hidden-controls #ui-icon-expand-options {
