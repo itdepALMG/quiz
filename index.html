@@ -91,7 +91,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -115,7 +115,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -139,7 +139,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -163,7 +163,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -187,7 +187,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -211,7 +211,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -235,7 +235,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -259,7 +259,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -283,7 +283,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -307,7 +307,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -331,7 +331,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -355,7 +355,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -379,7 +379,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -403,7 +403,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-attachment: fixed;
-        opacity: .5; /* Adjust opacity level here */
+        opacity: 0.5; /* Adjust opacity level here */
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
@@ -424,14 +424,18 @@
         padding: 20px;
         border: 1px solid #dee2e6;
         border-radius: 10px;
-        background-color: #ffffff;
-        background-color: rgba(255, 255, 255, 0.9);
-        /* Slightly transparent background */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Slightly transparent background */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
+
       .quiz-container::before {
         content: "";
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -440,13 +444,16 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        opacity: .7; /* Adjust opacity as needed */
-        z-index: -2; /* Place it behind the content */
+        background-attachment: fixed; /* Ensure the background scrolls with content */
+        opacity: 0.7; /* Adjust opacity as needed */
+        z-index: -1; /* Place it behind the content */
+        pointer-events: none; /* Ensure the background doesn't interfere with interactions */
       }
+
       .question {
         margin-bottom: 20px;
       }
-      .question h5{
+      .question h5 {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
 
@@ -526,370 +533,370 @@
   </head>
 
   <body>
-    
-
-    <div class="container quiz-container">
-      <nav class="navbar">
-        <div class="container-fluid">
-          <h1 class="title">Ceylon Hospital</h1>
-        </div>
-      </nav>
-      <form id="quizForm">
-        <div class="question-container">
-          <div class="question" data-question="1">
-            <div class="mb-3">
-              <label for="name" class="form-label fs-4">Name </label>
-              <input
-                type="text"
-                class="form-control fs-4"
-                id="name"
-                name="name"
-                aria-describedby="emailHelp"
-              />
-              <div id="nameError" class="text-danger"></div>
+ 
+      <div class="container quiz-container">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <h1 class="title">Ceylon Hospital</h1>
+          </div>
+        </nav>
+        <form id="quizForm">
+          <div class="question-container">
+            <div class="question" data-question="1">
+              <div class="mb-3">
+                <label for="name" class="form-label fs-4">Name </label>
+                <input
+                  type="text"
+                  class="form-control fs-4"
+                  id="name"
+                  name="name"
+                  aria-describedby="emailHelp"
+                />
+                <div id="nameError" class="text-danger"></div>
+              </div>
+              <div class="mb-3">
+                <label for="mobile" class="form-label fs-4"
+                  >Whatsapp Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control fs-4"
+                  id="mobile"
+                  name="mobile"
+                />
+                <div id="mobileError" class="text-danger"></div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="mobile" class="form-label fs-4"
-                >Whatsapp Number</label
-              >
-              <input
-                type="tel"
-                class="form-control fs-4"
-                id="mobile"
-                name="mobile"
-              />
-              <div id="mobileError" class="text-danger"></div>
+            <div class="question q1" data-question="2">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 1: Body type</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question1" value="a" />
+                <!-- <img src="thin.jpg" alt="Dry skin" /> -->
+                <label class="fs-4">(a) Thin, light, or small-framed</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question1" value="b" />
+                <!-- <img src="thin.jpg" alt="Dry skin" /> -->
+                <label class="fs-4">(b) Medium build, athletic</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question1" value="c" />
+                <!-- <img src="thin.jpg" alt="Dry skin" /> -->
+                <label class="fs-4">(c) Large, broad, or sturdy</label>
+              </div>
+            </div>
+  
+            <div class="question q2" data-question="3" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 2: Skin</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question2" value="a" />
+                <label>(a) Dry, rough, cold, or easily chapped</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question2" value="b" />
+                <label>(b) Warm, oily, and prone to rashes or acne</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question2" value="c" />
+                <label>(c) Soft, thick, oily, and moist</label>
+              </div>
+            </div>
+  
+            <div class="question q3" data-question="4" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 3: Hair</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question3" value="a" />
+                <label>(a) Dry, frizzy, or thin</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question3" value="b" />
+                <label>(b) Fine, straight, or oily</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question3" value="c" />
+                <label>(c) Thick, wavy, or curly</label>
+              </div>
+            </div>
+            <div class="question q4" data-question="5" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 4: Eyes</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question4" value="a" />
+                <label>(a) Small, dry and active-looking</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question4" value="b" />
+                <label>(b) Medium-sized, intense, and sharp-looking</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question4" value="c" />
+                <label>(c) Large, calm, and moist</label>
+              </div>
+            </div>
+            <div class="question q5" data-question="6" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 5: Appetite</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question5" value="a" />
+                <label
+                  >(a) Irregular; sometimes vary hungry, other time no
+                  appetite</label
+                >
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question5" value="b" />
+                <label>(b) Strong and constant,gets irritable if not fed</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question5" value="c" />
+                <label
+                  >(c) Slow but steady, can go without food for a long time</label
+                >
+              </div>
+            </div>
+            <div class="question q6" data-question="7" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 6: Digestion</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question6" value="a" />
+                <label>(a) Gas, bloating, or constipation</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question6" value="b" />
+                <label>(b) Quick digestion, prone to acidity or heartburn</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question6" value="c" />
+                <label>(c) Slow digestion, feels heavy after meals</label>
+              </div>
+            </div>
+            <div class="question q7" data-question="8" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 7: Energy Levels</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question7" value="a" />
+                <label>(a) Variable: bursts of energy followed by fatigue</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question7" value="b" />
+                <label>(b) Strong and intense, but can burn out quickly</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question7" value="c" />
+                <label
+                  >(c) Slow but enduring, steady energy throughout the day</label
+                >
+              </div>
+            </div>
+            <div class="question q8" data-question="9" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 8: Sleep Patterns</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question8" value="a" />
+                <label
+                  >(a) Light, easily disturbed, or trouble falling asleep</label
+                >
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question8" value="b" />
+                <label
+                  >(b) Moderate: falls asleep easily. sometimes wakes up
+                  early</label
+                >
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question8" value="c" />
+                <label>(c) Heavy, deep sleep. hard to wake up</label>
+              </div>
+            </div>
+            <div class="question q9" data-question="10" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 9: Temperament</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question9" value="a" />
+                <label>(a) Nervous, anxious, or easily worried</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question9" value="b" />
+                <label>(b) Focused, determined, and easily angered</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question9" value="c" />
+                <label>(c) Calm, peaceful and slow to react</label>
+              </div>
+            </div>
+            <div class="question q10" data-question="11" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 10: Memory</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question10" value="a" />
+                <label>(a) Quick to learn,but quick to forget</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question10" value="b" />
+                <label>(b) Sharp and precise; retains information well</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question10" value="c" />
+                <label>(c) Slow to learn, but excellent long-term memory</label>
+              </div>
+            </div>
+            <div class="question q11" data-question="12" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 11: Reaction to Stress</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question11" value="a" />
+                <label
+                  >(a) Nervous or fearful; often experiences restlessness</label
+                >
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question11" value="b" />
+                <label>(b) Irritable or easily angered under pressure</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question11" value="c" />
+                <label
+                  >(c) Calm and slow to react, but may withdraw or avoid
+                  stress</label
+                >
+              </div>
+            </div>
+            <div class="question q12" data-question="13" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 12: Climate Preference</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question12" value="a" />
+                <label>(a) Dislikes cold weather; prefers warmth</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question12" value="b" />
+                <label>(b) Dislikes heat; prefers cool environments</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question12" value="c" />
+                <label
+                  >(c) Enjoys warm, humid climates; dislikes cold and dry
+                  conditions</label
+                >
+              </div>
+            </div>
+            <div class="question q13" data-question="14" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 13: Speech Style</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question13" value="a" />
+                <label
+                  >(a) Fast, quick, and jumps from one topic to another</label
+                >
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question13" value="b" />
+                <label>(b) Clear, sharp, and often direct</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question13" value="c" />
+                <label>(c) Slow, calm, and deliberate</label>
+              </div>
+            </div>
+            <div class="question q14" data-question="15" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 14: Emotional Response</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question14" value="a" />
+                <label>(a) Quick to worry, easily scared, or anxious</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question14" value="b" />
+                <label>(b) Easily frustrated or angry</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question14" value="c" />
+                <label>(c) Slow, to get upset, generally laid back</label>
+              </div>
+            </div>
+            <div class="question q15" data-question="16" style="display: none">
+              <div class="overlay"></div>
+              <h5 class="fs-3 fw-semibold">Question 15: Physical Activity</h5>
+              <hr class="border border-success border-2 opacity-75" />
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question15" value="a" />
+                <label>(a) Active, likes movement, but gets tired easily</label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question15" value="b" />
+                <label>(b) Likes moderate activities and competition </label>
+              </div>
+              <div class="answer" onclick="selectAnswer(this)">
+                <input type="radio" name="question15" value="c" />
+                <label
+                  >(c) Prefers slow, steady, and minimal physical activity</label
+                >
+              </div>
             </div>
           </div>
-          <div class="question q1" data-question="2">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 1: Body type</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question1" value="a" />
-              <!-- <img src="thin.jpg" alt="Dry skin" /> -->
-              <label class="fs-4">(a) Thin, light, or small-framed</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question1" value="b" />
-              <!-- <img src="thin.jpg" alt="Dry skin" /> -->
-              <label class="fs-4">(b) Medium build, athletic</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question1" value="c" />
-              <!-- <img src="thin.jpg" alt="Dry skin" /> -->
-              <label class="fs-4">(c) Large, broad, or sturdy</label>
-            </div>
-          </div>
-
-          <div class="question q2" data-question="3" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 2: Skin</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question2" value="a" />
-              <label>(a) Dry, rough, cold, or easily chapped</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question2" value="b" />
-              <label>(b) Warm, oily, and prone to rashes or acne</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question2" value="c" />
-              <label>(c) Soft, thick, oily, and moist</label>
-            </div>
-          </div>
-
-          <div class="question q3" data-question="4" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 3: Hair</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question3" value="a" />
-              <label>(a) Dry, frizzy, or thin</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question3" value="b" />
-              <label>(b) Fine, straight, or oily</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question3" value="c" />
-              <label>(c) Thick, wavy, or curly</label>
-            </div>
-          </div>
-          <div class="question q4" data-question="5" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 4: Eyes</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question4" value="a" />
-              <label>(a) Small, dry and active-looking</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question4" value="b" />
-              <label>(b) Medium-sized, intense, and sharp-looking</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question4" value="c" />
-              <label>(c) Large, calm, and moist</label>
-            </div>
-          </div>
-          <div class="question q5" data-question="6" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 5: Appetite</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question5" value="a" />
-              <label
-                >(a) Irregular; sometimes vary hungry, other time no
-                appetite</label
-              >
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question5" value="b" />
-              <label>(b) Strong and constant,gets irritable if not fed</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question5" value="c" />
-              <label
-                >(c) Slow but steady, can go without food for a long time</label
-              >
-            </div>
-          </div>
-          <div class="question q6" data-question="7" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 6: Digestion</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question6" value="a" />
-              <label>(a) Gas, bloating, or constipation</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question6" value="b" />
-              <label>(b) Quick digestion, prone to acidity or heartburn</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question6" value="c" />
-              <label>(c) Slow digestion, feels heavy after meals</label>
-            </div>
-          </div>
-          <div class="question q7" data-question="8" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 7: Energy Levels</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question7" value="a" />
-              <label>(a) Variable: bursts of energy followed by fatigue</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question7" value="b" />
-              <label>(b) Strong and intense, but can burn out quickly</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question7" value="c" />
-              <label
-                >(c) Slow but enduring, steady energy throughout the day</label
-              >
-            </div>
-          </div>
-          <div class="question q8" data-question="9" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 8: Sleep Patterns</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question8" value="a" />
-              <label
-                >(a) Light, easily disturbed, or trouble falling asleep</label
-              >
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question8" value="b" />
-              <label
-                >(b) Moderate: falls asleep easily. sometimes wakes up
-                early</label
-              >
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question8" value="c" />
-              <label>(c) Heavy, deep sleep. hard to wake up</label>
-            </div>
-          </div>
-          <div class="question q9" data-question="10" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 9: Temperament</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question9" value="a" />
-              <label>(a) Nervous, anxious, or easily worried</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question9" value="b" />
-              <label>(b) Focused, determined, and easily angered</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question9" value="c" />
-              <label>(c) Calm, peaceful and slow to react</label>
-            </div>
-          </div>
-          <div class="question q10" data-question="11" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 10: Memory</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question10" value="a" />
-              <label>(a) Quick to learn,but quick to forget</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question10" value="b" />
-              <label>(b) Sharp and precise; retains information well</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question10" value="c" />
-              <label>(c) Slow to learn, but excellent long-term memory</label>
-            </div>
-          </div>
-          <div class="question q11" data-question="12" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 11: Reaction to Stress</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question11" value="a" />
-              <label
-                >(a) Nervous or fearful; often experiences restlessness</label
-              >
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question11" value="b" />
-              <label>(b) Irritable or easily angered under pressure</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question11" value="c" />
-              <label
-                >(c) Calm and slow to react, but may withdraw or avoid
-                stress</label
-              >
-            </div>
-          </div>
-          <div class="question q12" data-question="13" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 12: Climate Preference</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question12" value="a" />
-              <label>(a) Dislikes cold weather; prefers warmth</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question12" value="b" />
-              <label>(b) Dislikes heat; prefers cool environments</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question12" value="c" />
-              <label
-                >(c) Enjoys warm, humid climates; dislikes cold and dry
-                conditions</label
-              >
-            </div>
-          </div>
-          <div class="question q13" data-question="14" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 13: Speech Style</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question13" value="a" />
-              <label
-                >(a) Fast, quick, and jumps from one topic to another</label
-              >
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question13" value="b" />
-              <label>(b) Clear, sharp, and often direct</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question13" value="c" />
-              <label>(c) Slow, calm, and deliberate</label>
-            </div>
-          </div>
-          <div class="question q14" data-question="15" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 14: Emotional Response</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question14" value="a" />
-              <label>(a) Quick to worry, easily scared, or anxious</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question14" value="b" />
-              <label>(b) Easily frustrated or angry</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question14" value="c" />
-              <label>(c) Slow, to get upset, generally laid back</label>
-            </div>
-          </div>
-          <div class="question q15" data-question="16" style="display: none">
-            <div class="overlay"></div>
-            <h5 class="fs-3 fw-semibold">Question 15: Physical Activity</h5>
-            <hr class="border border-success border-2 opacity-75" />
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question15" value="a" />
-              <label>(a) Active, likes movement, but gets tired easily</label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question15" value="b" />
-              <label>(b) Likes moderate activities and competition </label>
-            </div>
-            <div class="answer" onclick="selectAnswer(this)">
-              <input type="radio" name="question15" value="c" />
-              <label
-                >(c) Prefers slow, steady, and minimal physical activity</label
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="navigation-buttons">
-          <button
-            type="button"
-            class="btn btn-lg btn-success fs-3"
-            onclick="previousQuestion()"
-            id="previousBtn"
-          >
-            <img
-              src="a4O8RnaVUi.gif"
-              class="rotate-gif"
-              alt="button gif"
-              width="50"
-              height="100%"
-            />
-            Previous
-          </button>
-          <div>
+  
+          <div class="navigation-buttons">
             <button
-            type="submit"
-            class="btn btn-lg btn-primary fs-3"
-            style="display: none"
-            id="submitBtn"
-          >
-            Submit
-          </button>
+              type="button"
+              class="btn btn-lg btn-success fs-3"
+              onclick="previousQuestion()"
+              id="previousBtn"
+            >
+              <img
+                src="a4O8RnaVUi.gif"
+                class="rotate-gif"
+                alt="button gif"
+                width="50"
+                height="100%"
+              />
+              Previous
+            </button>
+            <div>
+              <button
+                type="submit"
+                class="btn btn-lg btn-primary fs-3"
+                style="display: none"
+                id="submitBtn"
+              >
+                Submit
+              </button>
+            </div>
+            <button
+              type="button"
+              class="btn btn-lg btn-success fs-3"
+              onclick="nextQuestion()"
+              id="nextBtn"
+            >
+              Next
+              <img
+                src="a4O8RnaVUi.gif"
+                alt="button gif"
+                width="50"
+                height="100%"
+              />
+            </button>
           </div>
-          <button
-            type="button"
-            class="btn btn-lg btn-success fs-3"
-            onclick="nextQuestion()"
-            id="nextBtn"
-          >
-            Next
-            <img
-              src="a4O8RnaVUi.gif"
-              alt="button gif"
-              width="50"
-              height="100%"
-            />
-          </button>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+   
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
