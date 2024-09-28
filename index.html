@@ -407,15 +407,15 @@
         border-radius: 16px;
         z-index: -1; /* Keeps the background behind the content */
       }
-      /* .overlay {
+      .overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      } */
+        background: rgba(255, 255, 255, 0.5);
+        z-index: -1;
+      }
 
       .quiz-container {
         z-index: 2;
@@ -436,12 +436,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url("4249922_90941.jpg");
+        background-image: url("4249922_90941.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        opacity: 0.3; /* Adjust opacity as needed */
-        z-index: -1; /* Place it behind the content */
+        opacity: .7; /* Adjust opacity as needed */
+        z-index: -2; /* Place it behind the content */
       }
       .question {
         margin-bottom: 20px;
@@ -526,7 +526,7 @@
   </head>
 
   <body>
-    <div class="overlay"></div>
+    
 
     <div class="container quiz-container">
       <nav class="navbar">
@@ -562,6 +562,7 @@
             </div>
           </div>
           <div class="question q1" data-question="2">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 1: Body type</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -582,6 +583,7 @@
           </div>
 
           <div class="question q2" data-question="3" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 2: Skin</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -599,6 +601,7 @@
           </div>
 
           <div class="question q3" data-question="4" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 3: Hair</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -615,6 +618,7 @@
             </div>
           </div>
           <div class="question q4" data-question="5" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 4: Eyes</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -631,6 +635,7 @@
             </div>
           </div>
           <div class="question q5" data-question="6" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 5: Appetite</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -652,6 +657,7 @@
             </div>
           </div>
           <div class="question q6" data-question="7" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 6: Digestion</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -668,6 +674,7 @@
             </div>
           </div>
           <div class="question q7" data-question="8" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 7: Energy Levels</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -686,6 +693,7 @@
             </div>
           </div>
           <div class="question q8" data-question="9" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 8: Sleep Patterns</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -707,6 +715,7 @@
             </div>
           </div>
           <div class="question q9" data-question="10" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 9: Temperament</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -723,6 +732,7 @@
             </div>
           </div>
           <div class="question q10" data-question="11" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 10: Memory</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -739,6 +749,7 @@
             </div>
           </div>
           <div class="question q11" data-question="12" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 11: Reaction to Stress</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -760,6 +771,7 @@
             </div>
           </div>
           <div class="question q12" data-question="13" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 12: Climate Preference</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -779,6 +791,7 @@
             </div>
           </div>
           <div class="question q13" data-question="14" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 13: Speech Style</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -797,6 +810,7 @@
             </div>
           </div>
           <div class="question q14" data-question="15" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 14: Emotional Response</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -813,6 +827,7 @@
             </div>
           </div>
           <div class="question q15" data-question="16" style="display: none">
+            <div class="overlay"></div>
             <h5 class="fs-3 fw-semibold">Question 15: Physical Activity</h5>
             <hr class="border border-success border-2 opacity-75" />
             <div class="answer" onclick="selectAnswer(this)">
@@ -848,7 +863,8 @@
             />
             Previous
           </button>
-          <button
+          <div>
+            <button
             type="submit"
             class="btn btn-lg btn-primary fs-3"
             style="display: none"
@@ -856,6 +872,7 @@
           >
             Submit
           </button>
+          </div>
           <button
             type="button"
             class="btn btn-lg btn-success fs-3"
