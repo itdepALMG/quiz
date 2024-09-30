@@ -5,7 +5,9 @@
   $user = 'root';
   $pass = '12345';
   $charset = 'utf8mb4';
-
+  // $db = 'u674432606_quiz_db';
+  // $user = 'u674432606_quiz_db';
+  // $pass = 'quiz_dbALMG1';
   $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
   $options = [
       PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
