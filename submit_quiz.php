@@ -108,65 +108,71 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
+    $ill = '';
+    if ($des == 'a') {
+        $ill = 'Vata Prakriti';
+    } elseif ($des == 'b') {
+        $ill = 'pitta_Prakriti';
+    } elseif ($des == 'c') {
+        $ill = 'kapha_Prakriti';
+    } elseif ($des == 'ab') {
+        $ill = 'Vata_pitta_Prakriti';
+    } elseif ($des == 'ba') {
+        $ill = 'Vata_pitta_Prakriti';
+    } elseif ($des == 'bc') {
+        $ill = 'kapha_pitta_Prakriti';
+    } elseif ($des == 'cb') {
+        $ill = 'kapha_pitta_Prakriti';
+    } elseif ($des == 'ca') {
+        $ill = 'kapha_vata_Prakriti';
+    } elseif ($des == 'ac') {
+        $ill = 'kapha_vata_Prakriti';
+    } else {
+        $ill = 'tri_Prakriti';
+    }
 
-    // if ($des == 'a') {
-    //     $pdfContent = file_get_contents('Vata_Prakriti.pdf');
-    // } elseif ($des == 'b') {
-    //     $pdfContent = file_get_contents('pitta_Prakriti.pdf');
-    // } elseif ($des == 'c') {
-    //     $pdfContent = file_get_contents('kapha_Prakriti.pdf');
-    // } elseif ($des == 'ab') {
-    //     $pdfContent = file_get_contents('Vata_pitta_Prakriti.pdf');
-    // } elseif ($des == 'ba') {
-    //     $pdfContent = file_get_contents('Vata_pitta_Prakriti.pdf');
-    // } elseif ($des == 'bc') {
-    //     $pdfContent = file_get_contents('kapha_pitta_Prakriti.pdf');
-    // } elseif ($des == 'cb') {
-    //     $pdfContent = file_get_contents('kapha_pitta_Prakriti.pdf');
-    // } elseif ($des == 'ca') {
-    //     $pdfContent = file_get_contents('kapha_vata_Prakriti.pdf');
-    // } elseif ($des == 'ac') {
-    //     $pdfContent = file_get_contents('kapha_vata_Prakriti.pdf');
-    // } else {
-    //     $pdfContent = file_get_contents('tri_Prakriti.pdf');
-    // }
+    $currentDateTime = new DateTime();
 
+    $formattedDateTime = $currentDateTime->format('Y-m-d H:i:s');
 
-  
     $logEntry = "name: " . $name . "\n";
     $logEntry .= "mobile: " . $mobile . "\n";
-    $logEntry .= "\n\nanswers: " . $ans . "\n";
+    $logEntry .= "answers: " . $ans . "\n";
     $logEntry .= "a: " . $a . "\n";
     $logEntry .= "b: " . $b . "\n";
     $logEntry .= "c: " . $c . "\n";
     $logEntry .= "max: " . $max . "\n";
     $logEntry .= "middle: " . $middle . "\n";
     $logEntry .= "min: " . $min . "\n";
-    $logEntry .= "des: " . $des . "\n\n\n";
+    $logEntry .= "des: " . $des . "\n";
+    $logEntry .= "date: " . $formattedDateTime . "\n";
+    $logEntry .= "ill: " . $ill . "\n\n\n";
     $ans = $question1 . ' , ' . $question2 . ' , ' . $question3 . ' , ' . $question4 . ' , ' . $question5 . ' , ' . $question6 . ' , ' . $question7 . ' , ' . $question8 . ' , ' . $question9 . ' , ' . $question10 . ' , ' . $question11 . ' , ' . $question12 . ' , ' . $question13 . ' , ' . $question14 . ' , ' . $question15;
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
         // Prepare and execute the SQL statement
-        $sql = "INSERT INTO qa (name, mobile,answers) VALUES (:name, :mobile, :answers)";
+       
+
+        $sql = "INSERT INTO qa (name, mobile,answers,ill,filled_date) VALUES (:name, :mobile, :answers,:ill,:filled_date)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':mobile', $mobile);
-        
+
         $stmt->bindParam(':answers', $ans);
+        $stmt->bindParam(':ill', $ill);
+        $stmt->bindParam(':filled_date', $formattedDateTime);
         // Execute the prepared statement
         $stmt->execute();
     } catch (\PDOException $e) {
-        $logEntry .= "Error: " . $e->getMessage(). "\n\n\n";
-        
+        $logEntry .= "Error: " . $e->getMessage() . "\n\n\n";
     }
 
     // Prepare log entry
-    
-    
+
+
     // Append log entry to file
     $logFile = 'quiz_responses.log'; // Ensure this path is correct and writable
     if (file_put_contents($logFile, $logEntry, FILE_APPEND) === false) {
-      
     } else {
     }
 
@@ -175,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // header('Content-Disposition: inline; filename="downloaded.pdf"');
     // echo $des;
     ob_clean();
-   
+
     echo $des;
     exit;
 } else {
