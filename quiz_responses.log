@@ -1003,3 +1003,31 @@ date: 2024-09-30 09:39:15
 ill: Vata Prakriti
 
 
+name: dd
+mobile: d
+answers: 
+a: 0
+b: 99
+c: 0
+max: 99
+middle: 0
+min: 0
+des: b
+date: 2024-10-01 02:54:29
+ill: pitta_Prakriti
+
+
+name: dd
+mobile: d
+answers: 
+a: 33
+b: 33
+c: 33
+max: 33
+middle: 33
+min: 33
+des: abc
+date: 2024-10-01 05:26:21
+ill: tri_Prakriti
+
+
