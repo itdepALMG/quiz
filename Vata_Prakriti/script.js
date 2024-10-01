@@ -948,9 +948,9 @@ $(document).ready(bootstrap);
     options: {
       pageWidth: 557,
       pageHeight: 721,
-      pages: 3
+      pages: 4
     },
-    shareMessage: 'Introducing turn.js 5 - HTML5 Library for Flipbooks.',
+    shareMessage: '',
     pageFolder: 'content/magazine/',
     loadRegions: false,
   };
